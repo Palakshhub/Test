@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speak Up RIS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1634da;
+            --secondary-color: rgb(40, 121, 226);
+            --accent-color: #f72585;
+            --light-color: #f8f8f5;
+            --dark-color: #212529;
+            --success-color: #4bb543;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f3f1;
+            color: var(--dark-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            background: rgb(240, 240, 232);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.0rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-weight: 300;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .question {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .question h2 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .question p {
+            color: #949393;
+            font-size: 0.95rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .option-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid #eee;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .option-card:hover {
+            border-color: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(58, 12, 163, 0.1);
+        }
+
+        .option-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(76, 201, 240, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .option-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+
+        .option-desc {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .anonymous-notice {
+            background-color: rgba(58, 12, 163, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 25px;
+            border-left: 4px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: #464545;
+        }
+
+        .anonymous-icon {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.8rem;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 600px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .option-card {
+                min-height: 140px;
+                padding: 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Speak Up Corner</h1>
+            <p class="subtitle">Anonymous Student Feedback Portal by RIS</p>
+        </header>
+
+        <div class="content">
+            <div class="question">
+                <h2>What is your concern about?</h2>
+                <p>Select the category that best describes your feedback</p>
+            </div>
+
+            <div class="options-grid">
+                <div class="option-card" onclick="openForm('studies.html')">
+                    <div class="option-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="option-title">Regarding Studies</h3>
+                    <p class="option-desc">Curriculum, homework, exams, subjects, etc.</p>
+                </div>
+
+                <div class="option-card" onclick="openForm('Students_speakup.html')">
+                    <div class="option-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="option-title">Regarding Students</h3>
+                    <p class="option-desc">Peer issues, bullying, behavior, etc.</p>
+                </div>
+
+                <div class="option-card" onclick="openForm('Teachers_SpeakUp.html')">
+                    <div class="option-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="option-title">Regarding Teachers</h3>
+                    <p class="option-desc">Teaching methods, behavior, concepts, etc.</p>
+                </div>
+
+                <div class="option-card" onclick="openForm('Fill_In_FormTest.html')">
+                    <div class="option-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="option-title">Regarding School Events</h3>
+                    <p class="option-desc">Trips, functions, competitions, etc.</p>
+                </div>
+
+                <div class="option-card" onclick="openForm('Facilities_SpeakUp.html')">
+                    <div class="option-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3 class="option-title">Regarding Facilities</h3>
+                    <p class="option-desc">Classrooms, labs, washrooms, grounds, etc.</p>
+                </div>
+
+                <div class="option-card" onclick="openForm('Others_SpeakUp.html')">
+                    <div class="option-icon">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                    <h3 class="option-title">Other Issues</h3>
+                    <p class="option-desc">Anything not covered above</p>
+                </div>
+            </div>
+
+            <div class="anonymous-notice">
+                <i class="fas fa-user-secret anonymous-icon"></i>
+                <div>This feedback is completely anonymous. No personal information will be collected.</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Speak Up RIS - Rahul International School</p>
+        </footer>
+    </div>
+
+    <script>
+        function openForm(page) {
+            localStorage.setItem('feedbackCategory', page);
+            // Redirect to the selected form page
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

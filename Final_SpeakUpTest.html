@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Complaint Submitted Successfully</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .confetti-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        .success-message {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 700px;
+        }
+        .success-title {
+            color: #1a365d;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        .success-text {
+            color: #495057;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        .return-btn {
+            background-color: #1a365d;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: absolute;
+            bottom: -80px;
+            right: 50px;
+        }
+        .return-btn:hover {
+            background-color: #153a6e;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(26, 54, 93, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="confetti-container" id="confetti">
+        <div class="success-message">
+            <h1 class="success-title">🎉 You have lodged your complaint/problem.</h1>
+            <p class="success-text">Your problem/complaint is our concern. We assure you your problem will be solved.</p>
+            <button class="return-btn" onclick="location.href='Welcome_SpeakUp.html'">Return to Home Page</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script>
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+    </script>
+</body>
+</html>

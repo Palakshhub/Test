@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anonymous Complaint Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            background-color: #e9ecef;
+        }
+        .container {
+            max-width: 650px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #37c6f1;
+            font-size: 49px;
+            margin-bottom: 35px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #495057;
+        }
+        select {
+            width: 100%;
+            padding: 16px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+            font-size: 16px;
+        }
+        textarea {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #020202;
+            font-size: 16px;
+            min-height: 150px;
+            resize: vertical;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background-color: #37adf1;
+            color: rgb(5, 3, 3);
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #37bcf1;
+        }
+        .note {
+            font-size: 0.9em;
+            color: gray;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .view-complaints-btn {
+            margin-top: 20px;
+            width: auto;
+            padding: 10px 20px;
+            background-color: #37adf1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+        .view-complaints-btn:hover {
+            background-color: #37bcf1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="position: relative;">
+        <h2>Speak Up Form</h2>
+        <form action="connect.php" method="post">
+            <label for="problem">What problem are you facing?</label>
+            <select name="problem" id="problem" required>
+                <option value="">-- Select an option --</option>
+                <option value="1">Trips</option>
+                <option value="2">Functions</option>
+                <option value="3">Competitions</option>
+                <option value="4">Activities</option>
+                <option value="5">Sports</option>
+                <option value="6">External Exams</option>
+                <option value="7">Other</option>
+            </select>
+
+            <label for="description">Describe your issue:</label>
+            <textarea type="text" name="description" id="description" rows="4" placeholder="Type your issue here..." required></textarea>
+
+            <button type="button" onclick="submitForm()">Lodge Complaint</button>
+            <p class="note">This feedback is completely anonymous. No personal information will be collected.</p>
+        </form>
+    <script>
+        function submitForm() {
+            // Here you can add any form validation or processing logic if needed
+            // For now, we will just redirect to another file
+            window.location.href = 'Final_SpeakUpTest.html'; 
+        }
+    </script>
+</body>
+</html>
